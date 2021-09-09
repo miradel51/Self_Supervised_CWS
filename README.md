@@ -1,6 +1,6 @@
 # Self_Supervised_CWS
 
-Self-Supervised Quality Estimation for Machine Translation
+Segment, Mask, and Predict: Augmenting Chinese Word Segmentation with Self-Supervision
 
 Please cite:
 
