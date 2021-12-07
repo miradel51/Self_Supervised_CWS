@@ -53,13 +53,21 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
 - Data preprocessing
     - We use the same data pre-processing as used in [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf)
     - We use the original format of AS and CITYU instead of using their corresponding simplified versions.
-    - Other tools will be found in 'preprocess' folder.
+    - Other related scripts are given in 'preprocess' folder.
 - Environment
     - Python 3.6
     - torch>=1.4.0
     - transformers>=4.4.2
 
 ## Usage
+- Preprocessing ...
+    - Nosiy data:
+- Dependencies
+- Training ...
+    - PTM
+    - Revised MRT
+- Inference ...
+
 
 ## Contact
 If you have questions, suggestions and bug reports, please email [miradel_51@hotmail.com](miradel_51@hotmail.com).
