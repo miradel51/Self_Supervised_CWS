@@ -17,8 +17,21 @@ The following parts of this project are coming soon.
 
 ## Datasets
 
+All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and some OTHER open datasets respectively.
+
+- **SIGHAN05**
+    - this corpus contains "MSRA, PKU, AS and CITYU" corpora.
+    - related [paper]() and [datasets]() 
+
+- **SIGHAN08**
+
+- **SIGHAN10**
+
+- **OTHER**
+
 ## Requirements
 
 ## Usage
 
 ## Contact
+If you have questions, suggestions and bug reports, please email [miradel_51@hotmail.com](miradel_51@hotmail.com).
