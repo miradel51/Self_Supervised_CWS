@@ -42,7 +42,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
 - **SIGHAN10**
     - It contains data in different domains, and we choose "Finance, Literature and Medicine" for our cross-domain experiment.
     - The related [paper](https://aclanthology.org/W10-4126.pdf)
-    - Please look into 'dataset' folder.
+    - Please look into `dataset` folder.
 
 - **OTHER**
     - It contains "CNC, UDC and ZX" corpora.
@@ -50,10 +50,10 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     
 
 ## Requirements
-- Data preprocessing
+- Preprocessing
     - We use the same data pre-processing as used in [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf)
     - We use the original format of AS and CITYU instead of using their corresponding simplified versions.
-    - Other related scripts are given in 'preprocess' folder.
+    - Other related scripts are given in `preprocess` folder. 
 - Environment
     - Python 3.6
     - torch>=1.4.0
