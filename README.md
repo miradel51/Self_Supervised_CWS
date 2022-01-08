@@ -62,7 +62,6 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
 ## Usage
 - Preprocessing ...
     - Nosiy data:
-- Dependencies
 - Training ...
     - PTM
     - Revised MRT
