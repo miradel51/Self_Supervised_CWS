@@ -1,7 +1,7 @@
 import re
 import sys
 
-fsp = open('/data/disk5/private/mld/uuma/my_scripts/specialToken.txt', 'r', encoding='utf-8')
+fsp = open('./specialToken.txt', 'r', encoding='utf-8')
 config = {'maxlen': 60, 'special_token': [x.strip() for x in fsp]}
 fsp.close()
 
