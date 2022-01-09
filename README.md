@@ -100,6 +100,10 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
         python gen_4class_rnd.py char_file random_labeled_file 
         ```
+     - Cutting the corpus according to the punctuation
+        
+        < Convert .... 
+        
 - Training ...
     - PTM
     - Revised MRT
