@@ -102,7 +102,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
      - Cutting the corpus according to the punctuation
         ```
-        python cut.py
+        python cut.py input_file output_file
         ```
      - Convert both the training file and test file into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
 
