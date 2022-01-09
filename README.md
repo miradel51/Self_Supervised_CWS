@@ -104,7 +104,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
         python cut.py
         ```
-     - Convert the both the training file and test file using the aforementioned script into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
+     - Convert both the training file and test file into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
 
         > Convert the training file:
         ```
@@ -113,7 +113,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
 
         > Convert the test file:
         ```
-        python convert_fomat_utils.py -f p-train -i input_file -o output_file
+        python convert_fomat_utils.py -f p-test -i input_file -o output_file
         ```
         
 - Training ...
