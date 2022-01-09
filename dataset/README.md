@@ -14,7 +14,7 @@ Each folder contain the following files:
 
 In this folder you will see the cross-domain dataset. The Chinese Word Segmentation Bakeoff only released the testset, and recommended to use PKU corpus from SIGHAN2005 as trainset and devset.
 
-- computer.gold: represents the standard gold segmentation file.
-- computer.txt: denotes the non-segmented testset which is need to be segmented.
+- finance.gold: represents the standard gold segmentation file.
+- finance.txt: denotes the non-segmented testset which is need to be segmented.
 
-Tips: other domains are same with the domain of `computer`.  
+Tips: other domains are same with the domain of `finance`.  
