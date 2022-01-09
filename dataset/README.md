@@ -1,6 +1,6 @@
 # Datasets
 
-## SIGHAN2005,2008 and OTHER
+## SIGHAN2005 and OTHER
 
 Each folder contain the following files:
 
@@ -10,11 +10,6 @@ Each folder contain the following files:
 - test.gold: the original segmented testset which is provided by the Bakeoff.
 - test.txt: the non-segmented testset which is need to be segmented by using corresponding trained segmentation model.
 
-## SIGHAN2010
+## SIGHAN2008 and SIGHAN2010
 
-In this folder you will see the cross-domain dataset. The Chinese Word Segmentation Bakeoff only released the testset, and recommended to use PKU corpus from SIGHAN2005 as trainset and devset.
-
-- finance.gold: represents the standard gold segmentation file.
-- finance.txt: denotes the non-segmented testset which is need to be segmented.
-
-Tips: other domains are same with the domain of `finance`.  
+As sighan2008 and sighan2010 are proprietary, we are unable to distribute them. If you have a legal copy, you can replicate the scores with the same codes. The process steps are the same as the other datasets.
