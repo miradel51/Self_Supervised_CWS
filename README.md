@@ -60,8 +60,46 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     - transformers>=4.4.2
 
 ## Usage
-- Preprocessing ...
-    - Nosiy data:
+- Preprocessing
+    - Cleaning data: we clean the data by using simple three steps instead of dirctly train the openly available corpus.
+        
+        > Step1, remove the continuous multiple white spaces and replace them into single white space. 
+        
+        ```
+        python replace_sp.py original_file rm_sp_file
+        ```
+        
+        > Step2, remove the blank lines among the corpora.
+        
+        ```
+        python rmv_blk_ln.py rm_sp_file rm_blk_file
+        ```
+        
+        > Step3, remove the duplicated lines from the corpora, if there are existed some identical lines.
+        
+        ```
+        python rmv_dup.py rm_blk_file rm_dp_file
+        ```
+        
+        > Step4, shuffle the copurs (trainset and devset only) after the previous three steps. 
+
+        ```
+        python shuffle_corpus.py rm_dp_file
+        ```
+        
+    - Generating nosiy data: The noisy data generation consists of two steps. 
+    
+        > First, convert the sequence into char sequence. Second, generate "BMES" 4 classes randomly.
+    
+        step1, run `con_char.py` to achieve the char sequence; 
+        ```
+        python con_char.py original_file char_file
+        ```
+    
+        step2, run `gen_4class_rnd.py` to generate the randomly segmented files based on char sequence that achieved from 'step1'; 
+        ```
+        python gen_4class_rnd.py char_file random_labeled_file 
+        ```
 - Training ...
     - PTM
     - Revised MRT
