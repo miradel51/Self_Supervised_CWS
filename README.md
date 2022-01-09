@@ -101,8 +101,20 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         python gen_4class_rnd.py char_file random_labeled_file 
         ```
      - Cutting the corpus according to the punctuation
-        
-        < Convert .... 
+        ```
+        python cut.py
+        ```
+     - Convert the both the training file and test file using the aforementioned script into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
+
+        > Convert the training file:
+        ```
+        python convert_fomat_utils.py -f p-train -i input_file -o output_file
+        ```
+
+        > Convert the test file:
+        ```
+        python convert_fomat_utils.py -f p-train -i input_file -o output_file
+        ```
         
 - Training ...
     - PTM
