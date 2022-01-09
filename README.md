@@ -35,14 +35,8 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     - It contains "MSRA, PKU, AS and CITYU" corpora.
     - The related [paper](https://aclanthology.org/I05-3017.pdf) and [datasets](http://sighan.cs.uchicago.edu/bakeoff2005/) 
 
-- **SIGHAN08**
-    - It contains "CTB and SXU" corpora. We take CTB6 as CTB dataset in our whole experiment
-    - The related [paper](https://aclanthology.org/I08-4010.pdf) and [datasets](https://github.com/hankcs/multi-criteria-cws/tree/master/data/other/) 
-
-- **SIGHAN10**
-    - It contains data in different domains, and we choose "Finance, Literature and Medicine" for our cross-domain experiment.
-    - The related [paper](https://aclanthology.org/W10-4126.pdf)
-    - Please look into `dataset` folder.
+- **SIGHAN08/10**
+    - As sighan2008 and sighan2010 corpora are proprietary, we are unable to distribute them. If you have a legal copy, you can replicate our scores following the same codes as the other corpora.
 
 - **OTHER**
     - It contains "CNC, UDC and ZX" corpora.
@@ -91,12 +85,12 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     
         > First, convert the sequence into char sequence. Second, generate "BMES" 4 classes randomly.
     
-        step1, run `con_char.py` to achieve the char sequence; 
+        step1, run `con_char.py` to achieve the char sequence.
         ```
         python con_char.py original_file char_file
         ```
     
-        step2, run `gen_4class_rnd.py` to generate the randomly segmented files based on char sequence that achieved from 'step1'; 
+        step2, run `gen_4class_rnd.py` to generate the randomly segmented files based on char sequence that achieved from 'step1'.
         ```
         python gen_4class_rnd.py char_file random_labeled_file 
         ```
@@ -104,9 +98,9 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
         python cut.py input_file output_file
         ```
-     - Convert both the training file and test file into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
+     - Convert both the trainset/devset and test file into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
 
-        > Convert the training file:
+        > Convert the trainset/devset:
         ```
         python convert_fomat_utils.py -f p-train -i input_file -o output_file
         ```
@@ -120,6 +114,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     - PTM
     - Revised MRT
 - Inference ...
+    - Evaluate
 
 
 ## Contact
