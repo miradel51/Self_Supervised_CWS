@@ -1,6 +1,9 @@
 import re
 import sys
 
+ori_ = sys.argv[1]
+out_ = sys.argv[2]
+
 fsp = open('./specialToken.txt', 'r', encoding='utf-8')
 config = {'maxlen': 60, 'special_token': [x.strip() for x in fsp]}
 fsp.close()
@@ -36,13 +39,13 @@ def get_single_data(data, config):
     # return sents, labels
     return sents
 
-fin = open('train.txt', 'r', encoding='utf-8')
+fin = open(ori_, 'r', encoding='utf-8')
 data = [s.strip() for s in fin]
 fin.close()
 
 sents = get_single_data(data, config)
 
-fout = open('train.cut', 'w', encoding='utf-8')
+fout = open(out_, 'w', encoding='utf-8')
 for s in sents:
     fout.write(' '.join(s) + '\n')
 fout.close()
