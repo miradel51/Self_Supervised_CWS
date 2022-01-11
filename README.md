@@ -55,7 +55,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
 
 ## Usage
 - Preprocessing
-    - Cleaning data: we clean the data by using simple three steps instead of dirctly train the openly available corpus.
+    - Cleaning data: we clean the data by using simple four steps instead of dirctly train the model using openly available corpus.
         
         > Step1, remove the continuous multiple white spaces and replace them into single white space. 
         
@@ -110,11 +110,60 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         python convert_fomat_utils.py -f p-test -i input_file -o output_file
         ```
         
-- Training ...
-    - PTM
-    - Revised MRT
-- Inference ...
-    - Evaluate
+- Training
+    
+    > All the training process includes xx steps such as, training the MLM, Predicor, MRT risk file generation, Segmenter training, Optimizing segmenter using MRT. Most of corresponding codes in the train folder. Besides, in the training of segmenter we highgly follow their [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf) code. Therefore, in the preprocessing step we convert the original data into requited format.
+    
+    - MLM: train the revised masled language model for the predictor using new masking strategy.
+    
+     ```
+      ......
+     ```
+    
+    - Predictor: predict the maksed position using revised masked language model in the input sequence.
+    
+     ```
+      ......
+     ```
+    
+    - Revised MRT: generate some related files for revised MRT, the original paper for MRT in [here](https://aclanthology.org/P16-1159.pdf).
+    
+    ```
+      ......
+    ```
+    
+    - Segmenter: train the segmenter with crf.
+    
+    ```
+      ......
+     ```
+    - Optimizing segmenter:  continue to train the `Segmenter` using MRT.
+    
+     ```
+      ......
+     ```
+- Inference
+    
+    > The inference process incldes three steps. First step, we need to predict (segment) the testset. Second step, the segmentation result should be restored into orignal format. Third step, evaluate the model performance using precision, recall, and f-score.
+    
+    - Predict: 
+      > you can find the prediction script in the `train` folder. In this step, you are required to use the converted testset and segment it using the best model.
+      
+      ```
+      ......
+      ```
+    - Restoring:
+      > you need to restore the segmented testset into the original formatted text. You can find the corresponding script in the preprocess folder.
+      
+      ```
+      ......
+      ```
+    - Evaluate: 
+      > Evaluationg should be done on the restored testset and we use the precision, recll, and f-score as the evaluation method. The script also in the preprocess folder.
+      
+      ```
+      ......
+      ```
 
 
 ## Contact
