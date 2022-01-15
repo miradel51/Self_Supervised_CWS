@@ -115,7 +115,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     > All the training process includes xx steps such as, training the MLM, Predicor, MRT risk file generation, Segmenter training, Optimizing segmenter using MRT. Most of corresponding codes in the train folder. Besides, in the training of segmenter we highgly follow their [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf) code. Therefore, in the preprocessing step we convert the original data into requited format.
     
     - MLM: train the revised masked language model for the predictor using new masking strategy. 
-        > Hint: please set the available GPU number for training the MLM, and you can set the masked number by revising the parameter mask_count. Besides, to achieve the better result we combine the `SIGHAN05, SIGHAN08 and OTHER` as the dataset. Then split them train file and test file. The corpus should be cut according to the punctuation before training the MLM. Corresponding code in `train\mlm` folder.
+        > Hint: please set the available GPU number for training the MLM, and you can set the masked number by revising the parameter mask_count. Besides, to achieve the better result we combine the `SIGHAN05, SIGHAN08 and OTHER` as the dataset. Then split them train file and test file. The corpus should be cut according to the punctuation before training the MLM. Corresponding code in `train/mlm` folder.
     
      ```
      sh run_mlm_scratch.sh
