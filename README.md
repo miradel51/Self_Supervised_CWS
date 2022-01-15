@@ -115,16 +115,17 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     > All the training process includes xx steps such as, training the MLM, Predicor, MRT risk file generation, Segmenter training, Optimizing segmenter using MRT. Most of corresponding codes in the train folder. Besides, in the training of segmenter we highgly follow their [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf) code. Therefore, in the preprocessing step we convert the original data into requited format.
     
     - MLM: train the revised masked language model for the predictor using new masking strategy. 
-        > Hint: please set the available GPU number for training the MLM, and you can set the masked number by revising the parameter mask_count. Besides, to achieve the better result we combine the `SIGHAN05, SIGHAN08 and OTHER` as the dataset. Then split them train file and test file. The corpus should be cut according to the punctuation before training the MLM. Corresponding code in `train/mlm` folder.
+        > Hint: please set the available GPU number for training the MLM, and you can set the masked number by revising the parameter mask_count. Besides, to achieve the better result we combine the `SIGHAN05, SIGHAN08 and OTHER` as the dataset. Then split them train file and test file. The corpus should be `cut` according to the punctuation before training the MLM. Corresponding code in `train/mlm` folder.
     
      ```
      sh run_mlm_scratch.sh
      ```
     
     - Predictor: predict the maksed position using revised masked language model in the input sequence.
+        > You may also need to choose the available GPU number for predicting the masked position in the train set using previously trained revised MLM. Moreover, the corpus should be converted into `char` format in this step. The corresponding code in `train/predictor` forlder.
     
      ```
-      ......
+      sh pred_mlm_mrt.sh
      ```
     
     - Revised MRT: generate some related files for revised MRT, the original paper for MRT in [here](https://aclanthology.org/P16-1159.pdf).
