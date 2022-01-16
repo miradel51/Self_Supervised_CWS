@@ -48,7 +48,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     - We use the same data pre-processing as used in [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf)
     - We use the original format of AS and CITYU instead of using their corresponding simplified versions.
     - Other related scripts are given in `preprocess` folder. 
-- Environment
+- Environment (necessary)
     - Python 3.6
     - torch>=1.4.0
     - transformers>=4.4.2
