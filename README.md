@@ -98,7 +98,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
         python cut.py input_file output_file
         ```
-     - Convert both the trainset/devset and test file into the same format as EMNLP2020. The digits are converted into '0', and the alphabets are converted into 'X'.
+     - Convert both the trainset/devset and test file into the same format as [EMNLP2020](https://aclanthology.org/2020.emnlp-main.318.pdf). The digits are converted into '0', and the alphabets are converted into 'X'.
 
         > Convert the trainset/devset:
         ```
@@ -135,11 +135,12 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     python make_mrt.py
     ```
     
-    - Segmenter: train the segmenter with crf.
+    - Segmenter: train the segmenter with CRF. 
+        > The segmenter part is revised based on the original code of  [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf). The trainset is `train.cut` of the corresponding corpora, and both the trainset and devset are converted into the same format as  [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf). While you can set the GPU number with the parameter `CUDA_ENV_NUM` and the corrosponding codes are in `train/segmenter` folder.
     
     ```
-      ......
-     ```
+    python main_crf.py -c config_crf.txt
+    ```
     - Optimizing segmenter:  continue to train the `Segmenter` using MRT.
     
      ```
