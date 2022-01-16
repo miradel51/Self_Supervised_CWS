@@ -1,0 +1,29 @@
+token_mapping_rule = {'<pku>': '[unused4]', '/<pku>': '[unused5]',
+                          '<zx>': '[unused6]', '/<zx>': '[unused7]',
+                          '<msr>': '[unused8]', '/<msr>': '[unused9]',
+                          '<ctb>': '[unused10]', '/<ctb>': '[unused11]',
+                          '<sxu>': '[unused12]', '/<sxu>': '[unused13]',
+                          '<udc>': '[unused14]', '/<udc>': '[unused15]',
+                          '<cnc>': '[unused16]', '/<cnc>': '[unused17]',
+                          '<nihao>': '[unused18]', '/<nihao>': '[unused19]',
+                          'X': '[unused1]', '0': '[unused2]', 'M': '[unused3]'}
+mode = train
+seed = 812
+model_name = 'bert-base-chinese'
+batch_size = 64
+load_file = './your_dataset_dir/pku/train.cut'
+maxlen = 60
+special_token = '../../preprocess/specialToken.txt'
+
+# CUDA_ENV_NUM : If you want to run the code on CUDA, you can set the number of the CPU device. (default:0)
+CUDA_ENV_NUM = 0
+
+epochs = 5
+model_path = './your_model_dir/save-model-crf'
+save_model_name = 'demo'
+valid_file = './your_dataset_dir/pku/dev.txt'
+gold_file = './your_dataset_dir/pku/dev.gold'
+shuffle = True
+learning_rate = 0.00002
+
+CRF = True
