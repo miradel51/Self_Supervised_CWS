@@ -142,9 +142,10 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     python main_crf.py -c config_crf.txt
     ```
     - Optimizing segmenter:  continue to train the `Segmenter` using MRT.
+        > In this step you may need to use the generated mrt files that achieved from `Revised MRT` step. Besides, the devset is also need to be converted into the same format as [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf). Moreoevr, it is neccesary to keep the consistent with the same mrt size of  `Revised MRT` step, while you can also revise the other hyper-parameters for MRT such as lambda and alpha via `reg_lambda` and `alpha_mrt`, respectively. The corrosponding codes are in `train/segmenter` folder as well.
     
      ```
-      ......
+     python main_mrt_crf.py -c config_mrt_crf.txt
      ```
 - Inference
     
