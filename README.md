@@ -125,13 +125,14 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         > You may also need to choose the available GPU number for predicting the masked position in the train set using previously trained revised MLM. Moreover, the corpus should be converted into `char` format in this step. The corresponding code in `train/predictor` forlder.
     
      ```
-      sh pred_mlm_mrt.sh
+     sh pred_mlm_mrt.sh
      ```
     
     - Revised MRT: generate some related files for revised MRT, the original paper for MRT in [here](https://aclanthology.org/P16-1159.pdf).
+        > In this step, you need to build the neccessary file `train.mrt` and `train.risk` which will used in optimizing the segmenter via MRT. Besides, both the predicted result `pred_mlm.txt` achieved by `Predictor` and the trainset `train.cut` are required. The parameter `MASK_COUNT` should keep the consistent with the training `MLM` and `Predictor`, while you can also set the mrt size parameter `N_MRT` (default is 10). Corresponding code in `train/revised_mrt` folder.
     
     ```
-      ......
+    python make_mrt.py
     ```
     
     - Segmenter: train the segmenter with crf.
