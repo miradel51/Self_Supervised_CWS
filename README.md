@@ -98,7 +98,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
         python cut.py input_file output_file
         ```
-     - Convert both the trainset/devset and test file into the same format as [EMNLP2020](https://aclanthology.org/2020.emnlp-main.318.pdf). The digits are converted into '0', and the alphabets are converted into 'X'.
+     - Convert both the trainset/devset and test file into the same format as [EMNLP2020](https://aclanthology.org/2020.emnlp-main.318.pdf). The digits are converted into '0', and the alphabets are converted into 'X'. The converting script `convert_fomat_utils.py` is in the `preprocess` folder.
 
         > Convert the trainset/devset:
         ```
@@ -152,24 +152,26 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     > The inference process incldes three steps. First step, we need to predict (segment) the testset. Second step, the segmentation result should be restored into orignal format. Third step, evaluate the model performance using precision, recall, and f-score.
     
     - Predict: 
-      > you can find the prediction script in the `train` folder. In this step, you are required to use the converted testset and segment it using the best model.
+      > you can find the prediction script in the `train/segmenter` folder, but the corresponding config file for inference in `inference` folder. In this step, you are required to use the converted testset and then segment it using the best model. Besides, you are also required to convert the testset into the same format as [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf).
       
       ```
-      ......
+      python main_crf.py -c config_test_crf.txt
       ```
     - Restoring:
-      > you need to restore the segmented testset into the original formatted text. You can find the corresponding script in the preprocess folder.
+      > you need to restore the segmented testset into the original formatted text. You can find the corresponding script in `preprocess` folder, as well as it looks highly similar to converting process as we described above.
       
       ```
-      ......
+      python convert_fomat_utils.py -f post -io original_test_file -i segmented_test_file -o final_output_file
       ```
+      > The `final_output_file` actually it would be the restored testfile.
+      
     - Evaluate: 
-      > Evaluationg should be done on the restored testset and we use the precision, recll, and f-score as the evaluation method. The script also in the preprocess folder.
+      > Evaluation should be done on the restored testset and we use the precision, recll, and f-score as the evaluation method. The corresponding script is also in `preprocess` folder.
       
       ```
-      ......
+      python eval_ch_seg_rslt.py gold_standard_test_file final_output_file
       ```
 
 
 ## Contact
-If you have questions, suggestions and bug reports, please email [miradel_51@hotmail.com](miradel_51@hotmail.com).
+If you have questions, suggestions and bug reports, please email [miradel_51@hotmail.com](miradel_51@hotmail.com); [zheng-yh19@mails.tsinghua.edu.cn](zheng-yh19@mails.tsinghua.edu.cn); [kaiyuhuang@hotmail.com](kaiyuhuang@hotmail.com).
