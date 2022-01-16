@@ -1,0 +1,31 @@
+token_mapping_rule = {'<pku>': '[unused4]', '/<pku>': '[unused5]',
+                          '<zx>': '[unused6]', '/<zx>': '[unused7]',
+                          '<msr>': '[unused8]', '/<msr>': '[unused9]',
+                          '<ctb>': '[unused10]', '/<ctb>': '[unused11]',
+                          '<sxu>': '[unused12]', '/<sxu>': '[unused13]',
+                          '<udc>': '[unused14]', '/<udc>': '[unused15]',
+                          '<cnc>': '[unused16]', '/<cnc>': '[unused17]',
+                          '<nihao>': '[unused18]', '/<nihao>': '[unused19]',
+                          'X': '[unused1]', '0': '[unused2]', 'M': '[unused3]'}
+mode = test
+seed = 812
+model_name = 'bert-base-chinese'
+batch_size = 64
+
+maxlen = 60
+# original 60
+special_token = '../../preprocess/specialToken.txt'
+
+# CUDA_ENV_NUM : If you want to run the code on CUDA, you can set the number of the CPU device. (default:0)
+CUDA_ENV_NUM = 6
+
+load_file = './your_dataset_dir/pk/test.cut'
+# to be segmented test file (should be converted)
+
+test_model = './your_model_dir/my_best_model.pkl'
+# the best model to segmented the test file
+
+output_file = './your_dataset_dir/pk/test.seg_result.txt'
+# segmented result
+
+CRF = True

@@ -4,7 +4,7 @@ python run_mlm_scratch.py \
   --model_name_or_path=bert-base-chinese \
   --train_data_file=./your_dataset_dir/combined.shuf.train.cut \
   --eval_data_file=./your_dataset_dir/combined.shuf.dev.cut \
-  --output_dir=./your_model_folder/mlm_scratch_new_05_08_other_mkc_2_cut \
+  --output_dir=./your_model_dir/mlm_scratch_new_05_08_other_mkc_2_cut \
   --block_size=384 \
   --num_train_epochs=10 \
   --per_gpu_train_batch_size=32 \
