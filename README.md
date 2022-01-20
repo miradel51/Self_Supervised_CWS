@@ -109,6 +109,16 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         ```
         python convert_fomat_utils.py -f p-test -i input_file -o output_file
         ```
+
+     - Building vocab file
+
+        > Training the MLM requires a vocabulary file. A sample vocabulary file is located at `train/mlm/mydata/vocab.txt`. If you want to use your own vocabulary, you may use the script `build_vocab.py` in the `preprocess` folder.
+
+        ```
+        python build_vocab.py input_file vocab_file
+        ```
+
+        > Note: (1) the input file should be converted into `char` format in this step. (2) After generating the vocab file using the aforementioned command, you should replace the first 3 rows in the vocab file with the content of the file `V1.txt` in the `preprocess` folder.
         
 - Training
     
