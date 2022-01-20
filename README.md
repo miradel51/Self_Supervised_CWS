@@ -90,7 +90,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         python con_char.py original_file char_file
         ```
     
-        step2, run `gen_4class_rnd.py` to generate the randomly segmented files based on char sequence that achieved from 'step1'.
+        step2, run `gen_4class_rnd.py` to generate the randomly segmented files based on char sequence that achieved from `step1`.
         ```
         python gen_4class_rnd.py char_file random_labeled_file 
         ```
