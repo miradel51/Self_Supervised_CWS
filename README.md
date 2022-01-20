@@ -112,7 +112,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
 
      - Building vocab file
 
-        > Training the MLM requires a vocabulary file. A sample vocabulary file is located at `train/mlm/mydata/vocab.txt`. If you want to use your own vocabulary, you may use the script `build_vocab.py` in the `preprocess` folder.
+        > Training the MLM requires a vocabulary file. A sample vocabulary file is located at `train/mlm/mydata/vocab.txt`. If you want to use your own vocabulary, you may use the script `build_vocab.py` in the `preprocess` folder (which is originated from [THUMT](https://github.com/THUNLP-MT/THUMT)).
 
         ```
         python build_vocab.py input_file vocab_file
