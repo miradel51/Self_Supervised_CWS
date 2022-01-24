@@ -78,7 +78,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         > Step4, shuffle the copurs (trainset and devset only) after the previous three steps. 
 
         ```
-        python shuffle_corpus.py rm_dp_file
+        python shuffle_corpus.py --corpus rm_dp_file
         ```
         
     - Generating nosiy data: The noisy data generation consists of two steps. 
