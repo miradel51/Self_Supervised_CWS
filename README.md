@@ -50,8 +50,9 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
     - Other related scripts are given in `preprocess` folder. 
 - Environment (necessary)
     - Python 3.6
-    - torch>=1.4.0
-    - transformers>=4.4.2
+    - torch==1.1.0
+    - transformers==3.0.2
+        - Please replace the original `trainer.py` of transformers with the revised `trainer.py` which is provided under the root folder of this project.
 
 ## Usage
 - Preprocessing
@@ -122,7 +123,7 @@ All the corpora used in our experiment are from SIGHAN05, SIGHAN08, SIGHAN10 and
         
 - Training
     
-    > All the training process includes xx steps such as, training the MLM, Predicor, MRT risk file generation, Segmenter training, Optimizing segmenter using MRT. Most of corresponding codes in the train folder. Besides, in the training of segmenter we highgly follow their [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf) code. Therefore, in the preprocessing step we convert the original data into requited format.
+    > All the training process includes 5 steps such as, training the MLM, Predictor, MRT risk file generation, Segmenter training, Optimizing segmenter using MRT. Most of corresponding codes in the train folder. Besides, in the training of segmenter we highgly follow their [Huang et al. (2020)](https://aclanthology.org/2020.emnlp-main.318.pdf) code. Therefore, in the preprocessing step we convert the original data into requited format.
     
     - MLM: train the revised masked language model for the predictor using new masking strategy. 
         > Hint: please set the available GPU number for training the MLM, and you can set the masked number by revising the parameter mask_count. Besides, to achieve the better result we combine the `SIGHAN05, SIGHAN08 and OTHER` as the dataset. Then split them train file and test file. The corpus should be `cut` according to the punctuation before training the MLM. Corresponding code in `train/mlm` folder.
